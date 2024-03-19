@@ -8,7 +8,6 @@ function App() {
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [results, setResults] = useState([]);
-  const [results2, setResults2] = useState([]);
 
 
   const customStyles = {
@@ -32,7 +31,7 @@ function App() {
 
   useEffect(() => {
     // Fetch data from API
-    fetch('https://sta220-backend.onrender.com/all-courses/')
+    fetch('https://stat220-project-server.onrender.com/all-courses/')
       .then(response => response.json())
       .then(data => {
         // Data received, set options
@@ -64,7 +63,7 @@ function App() {
       console.log('Selected course title:', courseTitle);
 
       // Call the endpoint with the selected course title
-      fetch(`https://sta220-backend.onrender.com/results/?course_title=${encodeURIComponent(courseTitle)}&id=${1}`)
+      fetch(`https://stat220-project-server.onrender.com/results/?course_title=${encodeURIComponent(courseTitle)}&id=${1}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
