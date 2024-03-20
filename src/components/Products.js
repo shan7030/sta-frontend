@@ -36,11 +36,11 @@ export function Products(props) {
                         else if (ind < props.rating) {
                             return <FaStar id={ind + 1} key={ind} style={{ color: 'orange', padding: '4px' }} />
                         }
-                    }) : '- -'}
+                    }) : <p style={{margin:0, padding: 0, height: '22px'}}>- -</p>}
                 </div>
                 }
 
-                <p className='courseDuration'> <FaRegClock size={'1.5em'}/>{`  :   ${formatDuration(props.duration)}`}</p>
+                <p className='courseDuration'> <FaRegClock size={'1.5em'} style={{marginRight: '7px'}}/>{`${formatDuration(props.duration)}`}</p>
             </div>
 
 
