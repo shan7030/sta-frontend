@@ -1,10 +1,10 @@
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaRegClock, FaStarHalf } from 'react-icons/fa';
 
 export function Products(props) {
 
     const formatDuration = (durationInHours) => {
-        if (durationInHours === -1) {
-            return "Unavailable";
+        if (durationInHours <= 0) {
+            return "- -";
         }
 
         if (durationInHours < 1) {
@@ -26,22 +26,21 @@ export function Products(props) {
             <div className='productCard__content'>
                 <h3 className='productName'>{props.name}</h3>
 
-                <p className='authorName'>By: {props.courseInstructor}</p>
+                <p className='authorName'>By: {props.courseInstructor === -1 ? '- -' : props.courseInstructor}</p>
 
                 {<div className='productRating'>
-                    {[...Array(5)].map((index, ind) => {
-                        if (ind < Math.ceil(props.rating)) {
+                    {props.rating > 0 ? [...Array(5)].map((index, ind) => {
+                        if ( ind < props.rating && ind >= Math.floor(props.rating)) {
+                            return <FaStarHalf id={ind + 1} key={ind} style={{ color: 'orange', padding: '4px' }}></FaStarHalf>
+                        }
+                        else if (ind < props.rating) {
                             return <FaStar id={ind + 1} key={ind} style={{ color: 'orange', padding: '4px' }} />
                         }
-                        else {
-                            return <FaStar id={ind + 1} key={ind} style={{ color: 'white', padding: '4px' }} />
-                        }
-                    })}
+                    }) : <p style={{margin:0, padding: 0, height: '22px'}}>- -</p>}
                 </div>
                 }
 
-                <p className='courseDuration'> {`Duration:  ${formatDuration(props.duration)}`}</p>
-
+                <p className='courseDuration'> <FaRegClock size={'1.5em'} style={{marginRight: '7px'}}/>{`${formatDuration(props.duration)}`}</p>
             </div>
 
 

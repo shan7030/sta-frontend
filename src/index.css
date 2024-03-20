@@ -75,10 +75,14 @@ code {
   text-align: center;
   margin-top: 10px;
   font-size: 14px;
+  color: white;
 }
 
 .courseDuration {
   color: aliceblue;
   width: 100%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
