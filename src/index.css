@@ -11,3 +11,74 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.productList{
+  justify-content: space-evenly;
+  max-width: 250px;
+  width: 250px;
+  max-height: 400px;
+  height: 400px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial box-shadow */
+  transition: box-shadow 0.3s; /* Smooth transition for box-shadow changes */
+}
+
+
+.productList:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2); /* Additional box-shadow on hover */
+  cursor: pointer;
+}
+.productImage {
+  width: 100%;
+  max-width: 100%;
+  max-height: 150px;
+  position: relative;
+  top: 0px;
+  height: 150px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.productCard__content {
+  padding: 10px;
+}
+
+.productName {
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  color: aliceblue;
+  display: block;
+  /* Wrap long words and URLs */
+  overflow-wrap: break-word;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  /* Optional: Add ellipsis for overflow text */
+  overflow: hidden;
+}
+
+.authorName {
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+}
+
+.productRating {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.courseDuration {
+  color: aliceblue;
+  width: 100%;
+  text-align: center;
+}
